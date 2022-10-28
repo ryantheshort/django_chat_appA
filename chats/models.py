@@ -1,21 +1,19 @@
 from django.db import models
-from django.conf import settings
-# Create your models here.
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
-class Room(models.Model):
-    name = models.CharField(max_length=225)
+class Channel(models.Model):
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
 
-class Chat(models.Model):
+class Message(models.Model):
     text = models.TextField()
-    # a room will have many chats but a chat can only have one room
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
+    channel = models.ForeignKey(Channel, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.text[:50]

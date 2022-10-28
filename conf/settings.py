@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3rd Party
+    'rest_framework',
 
     # Local
     'chats.apps.ChatsConfig',
-
-    # 3rd Party
+    'api.apps.ApiConfig',
+    
 
 
 ]
