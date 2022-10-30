@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # 3rd Party
     'rest_framework',
     'rest_framework.authtoken',
@@ -49,9 +50,6 @@ INSTALLED_APPS = [
     'chats.apps.ChatsConfig',
     'api.apps.ApiConfig',
     'frontend.apps.FrontendConfig',
-    
-
-
 ]
 
 MIDDLEWARE = [
@@ -84,6 +82,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -136,7 +139,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Static file dirs
 # https://docs.djangoproject.com/en/4.1/ref/settings/#staticfiles-dirs
