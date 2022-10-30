@@ -1,38 +1,279 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Fugaz+One&display=swap');
+
+.app {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #5e5e5e;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: 'Fugaz One', Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  color: #e2a055;
+  margin-right: 5px;
+}
+
+.title:hover {
+  color: #e2a055;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-family: 'Fugaz One', Arial, Helvetica, sans-serif;
+  color: #969696;
+}
+
+.subtitle:hover {
+  color: #969696;
+}
+
+.username, .logout {
+  color: #969696;
+  font-size: 20px;
+}
+
+.user-icon {
+  margin-right: 5px;
+}
+
+.username:hover, .logout:hover {
+  color: #e2a055;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.submit {
+  border: 1px solid #e2a055;
+  background-color: #e2a055;
+  color: #212121;
+}
+
+.submit:hover {
+  border: 1px solid #e27d0a;
+  background-color: #e27d0a;
+  color: #fff;
+}
+
+.input {
+  background-color: #c5c5c5;
+  border: 2px solid #969696;
+}
+
+.nav {
+  border-radius: 0px;
+  background: #212121;
+  box-shadow: inset 42px -42px 84px #1e1e1e,
+            inset -42px 42px 84px #242424;
+}
+
+.main {
+  width: 80%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #878787;
+}
+
+.user-login {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.login-form, .register-form {
+  width: 100%;
+  margin: 40px;
+}
+
+.login-title {
+  font-family: 'Fugaz One', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rooms {
+  width: 20%;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  margin: 0;
+  background-color: #878787;
 }
 
-.App-link {
-  color: #61dafb;
+.room-li, .new-room-li {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.room-button {
+  width: 100%;
+  border: solid 1px #212121;
+  margin-bottom: 5px;
+  color: #212121;
+}
+
+.room-button:hover {
+  background-color: #e2a055;
+  border-color: #e2a055;
+}
+
+.room-button:focus {
+  background-color: #e2a055;
+  border-color: #e2a055;
+}
+
+.new-room-button {
+  width: 100%;
+  color: #212121;
+  margin-bottom: 5px;
+}
+
+.room-dropdown {
+  display: none;
+  width: 100%;
+}
+
+.dropdown-cover {
+  width: 100%;
+  color: #212121;
+  background-color: #e2a055;
+  border-color: #e2a055;
+}
+
+.dropdown-cover:hover {
+  background-color: #e27d0a;
+  border-color: #e27d0a;
+}
+
+.menu {
+  width: 100%;
+  background-color: #c5c5c5;
+  text-align: center;
+}
+
+.menu-item {
+  width: 95%;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.menu-item:hover {
+  background-color: #e2a055;
+}
+
+
+.add-room-input {
+  margin-bottom: 5px;
+}
+
+.send-recieve {
+  width: 80%;
+  padding: 10px 0 0 0;
+  border-radius: 0px;
+  background: #5e5e5e;
+  box-shadow: inset 42px -42px 84px #565656,
+            inset -42px 42px 84px #666666;
+}
+
+.message {
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #e2a055;
+  padding: 10px;
+}
+
+.edit-box {
+  text-align: right;
+  color: #999999;
+  font-size: 18px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.messeger {
+  width: 100%;
+  padding: 0 10px 30px 10px;
+  background-color: #878787;
+  position: sticky;
+  bottom: 0;
+}
+
+.send-button {
+  width: 100%;
+}
+
+.padding {
+  min-height: 100vh;
+}
+
+.trash {
+  cursor: pointer;
+}
+
+@media (max-width: 956px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .user-login {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .login-form, .register-form {
+    margin: 0;
+  }
+
+  .register-form {
+    margin-top: 20px;
+  }
+
+  .rooms {
+    width: 100%;
+  }
+
+  .room-li {
+    display: none;
+  }
+
+  .room-dropdown {
+    display: block;
+  }
+
+  .send-recieve {
+    width: 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  .subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 668px) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+
+  .text-input {
+    margin-bottom: 5px;
   }
 }
