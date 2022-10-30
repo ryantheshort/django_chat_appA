@@ -39,10 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd Party
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     # Local
     'chats.apps.ChatsConfig',
     'api.apps.ApiConfig',
+    'frontend.apps.FrontendConfig',
     
 
 
@@ -130,5 +136,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Static file dirs
+# https://docs.djangoproject.com/en/4.1/ref/settings/#staticfiles-dirs
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/static/build/static'),)
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
+
+# SITE_ID
+# https://docs.djangoproject.com/en/4.1/ref/contrib/sites/
+SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
